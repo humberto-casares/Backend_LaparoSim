@@ -34,7 +34,7 @@ async def uploadFiles(csv_file: UploadFile = File(...), png_file: UploadFile = F
         with open(png_file_path, "wb") as png_target:
             png_target.write(await png_file.read())
 
-        return {"status_code": 200, "status_message": "Files uploaded successfully."}
+        return {"status_code": 200, "status_message": "Files uploaded successfully on Server."}
 
     except FileNotFoundError as e:
         raise HTTPException(status_code=400, detail="Target directory not found.")
